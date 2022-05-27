@@ -1,0 +1,1 @@
+sp_InsertMovie 'Joker', '2019-10-04', 62.5, 1070, 122, false, 1

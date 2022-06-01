@@ -1,1 +1,10 @@
-sp_InsertMovie 'Joker', '2019-10-04', 62.5, 1070, 122, false, 1
+--sp_InsertMovie 'Joker', '2019-10-04', 62.5, 1070, 122, false, 1
+--sp_InsertMovie 'Avatar', 237, 2780, 162, True, 3
+--sp_InsertMovie 'Maze Runner', '2014-09-19', 34, 340, 113, True, 3
+--sp_InsertMovie 'Hunger Games', '2012-03-31', 78, 694, 144, True, 2
+--sp_InsertMovie 'Ouija', '2016-10-24', 5, [42.7], 99, False, 4
+--sp_InsertMovie 'Van Helsing', '2004-05-07', 170, [300.2], 131, false, 4
+--sp_InsertMovie 'Matrix', '1999-03-31', 63, [466.6], 136, True, 1
+--sp_InsertMovie 'Australia', '2008-11-26', 130, [211.3], 165, False, 3
+--sp_InsertMovie 'Happy Feet', '2006-11-17', 100, [384.3], 108, True, 1
+--sp_InsertMovie 'Titanic', '1997-12-19', 200, 2202, 195, False, 3

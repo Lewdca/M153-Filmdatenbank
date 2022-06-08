@@ -53,8 +53,8 @@ create table FilmGenre(
     fk_GenreId integer,
 
     primary key(FilmGenreId),
-    foreign key (fk_FilmtitelId) References Filmtitel(FilmtitelId),
-    foreign key (fk_GenreId) References Genre(GenreId)
+    foreign key (fk_FilmtitelId) References Filmtitel(FilmtitelId) ON DELETE CASCADE,
+    foreign key (fk_GenreId) References Genre(GenreId) ON DELETE CASCADE
 );
 
 create table FilmAutor(
@@ -63,8 +63,8 @@ create table FilmAutor(
     fk_AutorId integer,
 
     primary key(FilmAutorId),
-    foreign key (fk_FilmtitelId) References Filmtitel(FilmtitelId),
-    foreign key (fk_AutorId) References Autor(AutorId)
+    foreign key (fk_FilmtitelId) References Filmtitel(FilmtitelId) ON DELETE CASCADE,
+    foreign key (fk_AutorId) References Autor(AutorId) ON DELETE CASCADE
 );
 go
 create trigger DeleteMovie on Filmtitel for delete 

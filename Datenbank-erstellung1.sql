@@ -4,7 +4,6 @@ drop database if exists Filmdatenbank
 go
 Create Database Filmdatenbank
 go
-
 use Filmdatenbank
 go
 create table Studio(    
@@ -67,3 +66,38 @@ create table FilmAutor(
     foreign key (fk_FilmtitelId) References Filmtitel(FilmtitelId),
     foreign key (fk_AutorId) References Autor(AutorId)
 );
+go
+create trigger DeleteMovie on Filmtitel for delete 
+as begin
+    if @@rowcount = 0 
+    begin
+        print 'Es sind keine Zeilen betroffen'
+    end
+    else
+    begin
+    print 'Sie haben Zeilen gelöscht';
+    end
+end
+go
+
+CREATE PROCEDURE sp_InsertMovie 
+@Titel varchar(50),
+@Erscheinung date,
+@Ausgaben decimal(9,2),
+@Einnahmen decimal(9,2),
+@Dauer int,
+@Nachfolge BIT,
+@Studio int
+AS BEGIN
+    INSERT INTO Filmtitel(Titel, Erscheinungsdatum, Ausgaben, Einnahmen, Dauer, Nachfolge, fk_StudioId)
+    VALUES(@Titel, @Erscheinung, @Ausgaben, @Einnahmen, @Dauer, @Nachfolge, @Studio)
+END
+go
+CREATE PROCEDURE sp_UpdateStudioName
+@Id int,
+@NewName varchar(50)
+AS BEGIN
+    Update Studio
+    Set StudioName = @NewName
+    Where StudioId = @Id
+END
